@@ -1,0 +1,3 @@
+brewsite_venv/
+__pycache__/
+app/__pycache__/

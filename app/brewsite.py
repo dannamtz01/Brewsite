@@ -1,22 +1,27 @@
-from flask import Flask
+from flask import Flask, render_template
+import requests
 
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    return "<p>Hello, 362 World!</p>"
+@app.route("/home/")
+def home():
+    return render_template("home.html", user="Danna Martinez")
 
 @app.route("/breweries/")
 def breweries():
-    return "<p>Welcome to Breweries</p>"
+    # Fetching data from the openbrewerydb API
+    response = requests.get("https://api.openbrewerydb.org/v1/breweries")
+    data = response.json()
+    return render_template("breweries.html", user="Danna Martinez", content=data)
 
 @app.route("/beer_types/")
 def beer_types():
-    return "<p>Welcome to beer types</p>"
+    return render_template("beer_types.html", user="Danna Martinez")
 
 @app.route("/about/")
 def about():
-    return "<p>Welcome to about us</p>"
+    return render_template("about.html", user="Danna Martinez")
 
 if __name__ == "__main__":
     app.run(debug=True)

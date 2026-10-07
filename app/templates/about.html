@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Welcome to about us</p>
+<p>{{ user }}</p>
+<br>
+
+<div class="row mt-4">
+    <div class="col-md-6 mb-3">
+        <p><strong>Contact Info:</strong></p>
+        <p>Phone: 555-555-5555</p>
+    </div>
+    <div class="col-md-6 text-center">
+        <img src="{{ url_for('static', filename='images/production.jpg') }}" class="img-fluid rounded shadow" style="object-fit: contain; max-height: 400px; width: 100%;" alt="Brewery Production">
+    </div>
+</div>
+{% endblock %}

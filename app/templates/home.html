@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome to my Brewsite page</h2>
+<p>{{ user }}</p>
+
+<div class="row mt-4">
+    <div class="col-md-6 text-center">
+        <img src="{{ url_for('static', filename='images/barrels.jpg') }}" class="img-fluid rounded shadow" style="object-fit: contain; max-height: 500px; width: 100%;" alt="Barrels">
+    </div>
+    <div class="col-md-6 text-center">
+        <img src="{{ url_for('static', filename='images/beer.jpg') }}" class="img-fluid rounded shadow" style="object-fit: contain; max-height: 500px; width: 100%;" alt="Beer">
+    </div>
+</div>
+{% endblock %}
